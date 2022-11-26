@@ -13,8 +13,13 @@ def add_entry():
 st.title('Avbenake first web app')
 st.subheader('Its a new one actually')
 st.write('This seems amazing to write and design,'
-         ' pretty easy to design I did say.'
-         ' Check out the entries below')
+         ' pretty interesting design I did say.'
+         ' <b>Check out the entries below</b>',
+         unsafe_allow_html=True)                    # to allow for html format
+
+st.text_input(label="Enter a todo for yourself",
+              placeholder="Add new entry...", on_change=add_entry,
+              key='new_entry')
 
 for index, entry in enumerate(entries):
     checked = st.checkbox(entry, key=entry)
@@ -24,9 +29,5 @@ for index, entry in enumerate(entries):
         del st.session_state[entry]
         st.experimental_rerun()
 
-st.text_input(label="Enter a todo for yourself",
-              placeholder="Add new entry...", on_change=add_entry,
-              key='new_entry')
-
-print('yes oh')
-st.session_state
+# print('yes oh')
+# st.session_state
