@@ -1,4 +1,4 @@
-TO_DOS = 'ardit.txt'                        # capital letters to rep variable for constant strings
+TO_DOS = 'xmas.txt'                        # capital letters to rep variable for constant strings
 
 
 def get_reading(de_doc=TO_DOS):             # using local variable to represent the txt file by default arg
